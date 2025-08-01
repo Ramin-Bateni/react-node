@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: prolink
+    restart: unless-stopped    # Always restart the container unless stopped manually
+    environment:
+      - MONGO_INITDB_DATABASE=${DB_NAME}   # Initialize database name from .env
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
+networks:
+  prolink-net:
+    name: prolink-network 
