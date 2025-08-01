@@ -2,11 +2,13 @@
 # ReactNode Client and Server Applications
 **Welcome to my new features that I implemented in both Client and Server Applications**
 
+Developr of the following new features: [Ramin Bateni Parvar](https://www.linkedin.com/in/ramin-bateni-parvar/)
+
 ## ReactNode Client
 Let have a look at the results in client side first!
 
 ### Login success and failure states
-Now you can sign-in to the project fast.
+Now you can sign-in to the project with your email and password (JWT Token Support).
 <p align="center">
   <img src="./assets/client/login-faild-success.png" alt="Login success and failure states" />
 </p>
