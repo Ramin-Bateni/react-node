@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start client",
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "owner": "npm",
+        "source": "npm",
+        "applyTo": "allDocuments",
+        "pattern": {
+          "regexp": ".*"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting the development server",
+          "endsPattern": "Compiled .*"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/Client",
+        "env": {
+          "BROWSER": "none"
+        }
+      }
+    }
+  ]
+}
