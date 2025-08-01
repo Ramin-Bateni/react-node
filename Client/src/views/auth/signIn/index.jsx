@@ -25,7 +25,7 @@ import DefaultAuth from "layouts/auth/Default";
 
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
-import { postApi } from "services/api";
+import { postApi } from "../../../services/api";
 import { loginSchema } from "schema";
 import { toast } from "react-toastify";
 import Spinner from "components/spinner/Spinner";
@@ -77,14 +77,14 @@ function SignIn() {
   const login = async () => {
     try {
       setIsLoding(true);
-      let response = await postApi("api/user/login", values, checkBox);
+      let response = await postApi("/api/auth/login", values, checkBox);
       if (response && response.status === 200) {
         navigate("/superAdmin");
         toast.success("Login Successfully!");
         resetForm();
         dispatch(setUser(response?.data?.user))
       } else {
-        toast.error(response.response.data?.error);
+        toast.error(response.response.data?.message);
       }
     } catch (e) {
       console.log(e);
